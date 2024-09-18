@@ -33,10 +33,7 @@
             "required": false,
             "style": "form",
             "explode": false,
-            "example": [
-              "dog",
-              "cat"
-            ],
+            "example": ["dog", "cat"],
             "schema": {
               "type": "array",
               "items": {
@@ -53,14 +50,6 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "If-None-Match",
-            "in": "header",
-            "example": "\"24651112999504\"",
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -97,10 +86,7 @@
           "required": false,
           "style": "form",
           "explode": false,
-          "example": [
-            "dog",
-            "cat"
-          ],
+          "example": ["dog", "cat"],
           "schema": {
             "type": "array",
             "items": {
@@ -170,10 +156,7 @@
             "description": "A comma-seperated list of species IDs",
             "required": false,
             "explode": false,
-            "example": [
-              1,
-              2
-            ],
+            "example": [1, 2],
             "schema": {
               "type": "array",
               "items": {
@@ -215,9 +198,7 @@
             "$ref": "#/components/schemas/NewPet"
           },
           {
-            "required": [
-              "id"
-            ],
+            "required": ["id"],
             "properties": {
               "id": {
                 "type": "integer",
@@ -228,9 +209,7 @@
         ]
       },
       "NewPet": {
-        "required": [
-          "name"
-        ],
+        "required": ["name"],
         "properties": {
           "name": {
             "type": "string"
@@ -247,9 +226,7 @@
         "type": "array"
       },
       "Thing": {
-        "required": [
-          "id"
-        ],
+        "required": ["id"],
         "properties": {
           "id": {
             "type": "integer"
@@ -257,10 +234,7 @@
         }
       },
       "Error": {
-        "required": [
-          "code",
-          "message"
-        ],
+        "required": ["code", "message"],
         "properties": {
           "code": {
             "type": "integer",
