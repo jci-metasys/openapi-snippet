@@ -227,13 +227,8 @@ const createHarParameterObjects = function (
   }
 
   const objects = [];
-  if (style === null || style === undefined) {
-    style = getDefaultStyleForLocation(location);
-  }
-  if (explode === null || explode === undefined) {
-    explode = getDefaultExplodeForStyle(style);
-  }
-
+  style = style ?? getDefaultStyleForLocation(location);
+  explode = explode ?? getDefaultExplodeForStyle(style);
 
   if (location === 'query' || location === 'cookie') {
     const separator = getArrayElementSeparator(style);
@@ -271,18 +266,11 @@ const createHarParameterObjects = function (
     const separator = getSeparator(style);
 
     if (Array.isArray(value)) {
-      let joinedValue;
-      if (explode) {
-        joinedValue = value.join(separator + paramId);
-      } else {
-        joinedValue = value.join(',');
-      }
-
       objects.push({
         name,
-        value: prefix + paramId + joinedValue,
+        value:
+          prefix + paramId + value.join(explode ? separator + paramId : ','),
       });
-
     } else if (value && typeof value === 'object') {
       if (explode) {
         objects.push({
@@ -695,13 +683,9 @@ const getHeadersArray = function (openApi, path, method) {
   if (typeof pathObj.security !== 'undefined') {
     for (var l in pathObj.security) {
       const secScheme = Object.keys(pathObj.security[l])[0];
-      let secDefinition;
-      if (openApi.securityDefinitions) {
-        secDefinition = openApi.securityDefinitions[secScheme];
-      } else {
-        secDefinition = openApi.components.securitySchemes[secScheme];
-      }
-
+      const secDefinition = openApi.securityDefinitions
+        ? openApi.securityDefinitions[secScheme]
+        : openApi.components.securitySchemes[secScheme];
       const authType = secDefinition.type.toLowerCase();
       let authScheme = null;
 

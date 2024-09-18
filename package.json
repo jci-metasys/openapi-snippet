@@ -1,6 +1,6 @@
 {
   "name": "openapi-snippet",
-  "version": "0.14.0-jci3",
+  "version": "0.14.0",
   "description": "Generates code snippets from Open API (previously Swagger) documents.",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js"
   },
   "dependencies": {
-    "httpsnippet": "^3.0.6",
+    "httpsnippet": "^2.0.0",
     "openapi-sampler": "^1.0.0-beta.14"
   },
   "devDependencies": {

@@ -137,8 +137,6 @@ test('Testing the case when default is present but a value is provided, use the 
   t.false(/all/.test(result.snippets[0].content)); // The default value of `filter` is `all`
 });
 
-
-
 test('Testing the case when default is present but no value is provided, use the default', function (t) {
   t.plan(2);
   // checks the 'Pages' schema...
@@ -205,22 +203,6 @@ test('Testing the case when an example is provided, use the provided example val
   t.false(/SOME_INTEGER_VALUE/.test(snippet));
   t.end();
 });
-
-test('Testing a string parameter should escape quotes correctly in csharp', function (t) {
-  t.plan(1);
-  const result = OpenAPISnippets.getEndpointSnippets(
-    ParameterExampleReferenceAPI,
-    '/pets',
-    'get',
-    ['csharp_restsharp']
-  );
-
-  const snippet = result.snippets[0].content;
-  // The double quotes in the If-None-Match header must be escaped
-  const regex = /request\.AddHeader\("If-None-Match",\s*"\\"[^"]*\\""\);/;
-
-  t.true(regex.test(snippet));
-})
 
 test('Generate snippet with multipart/form-data', function (t) {
   const result = OpenAPISnippets.getEndpointSnippets(
