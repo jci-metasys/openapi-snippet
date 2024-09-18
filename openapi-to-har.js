@@ -448,36 +448,63 @@ const getBaseUrl = function (openApi, path, method) {
  * @return {HarParameterObject[]} Array of objects describing the parameters in a given OpenAPI method or path
  */
 const getParameterValues = function (openApi, param, location, values) {
-  let value =
-    'SOME_' + (param.type || param.schema.type).toUpperCase() + '_VALUE';
-  if (location === 'path') {
-    // then default to the original place holder value (e.b. '{id}')
-    value = `{${param.name}}`;
-  }
+  let value = undefined;
 
-  if (values && typeof values[param.name] !== 'undefined') {
-    value = values[param.name];
-  } else if (typeof param.example !== 'undefined') {
-    value = param.example;
-  } else if (typeof param.examples !== 'undefined') {
-    let firstExample = Object.values(param.examples)[0];
-    if (
-      typeof firstExample['$ref'] === 'string' &&
-      /^#/.test(firstExample['$ref'])
+  // If the parameter is required then we want to ensure there is a value
+  // We'll check values, param.example, param.examples, param.schema.example and param.default
+  // If the parameter is not required then the inclusion in a code snippet is
+  // opt-in only. Only values and param.examples will be examined and only param.examples tagged
+  // with the vendor extension`x-use-in-snippets: true`
+
+  if (param.required || param.in === 'path') {
+
+    if (values && typeof values[param.name] !== 'undefined') {
+      value = values[param.name];
+    } else if (typeof param.example !== 'undefined') {
+      value = param.example;
+    } else if (typeof param.examples !== 'undefined') {
+      let firstExample = Object.values(param.examples)[0];
+      if (
+        typeof firstExample['$ref'] === 'string' &&
+        /^#/.test(firstExample['$ref'])
+      ) {
+        firstExample = resolveRef(openApi, firstExample['$ref']);
+      }
+      value = firstExample.value;
+    } else if (
+      typeof param.schema !== 'undefined' &&
+      typeof param.schema.example !== 'undefined'
     ) {
-      firstExample = resolveRef(openApi, firstExample['$ref']);
+      value = param.schema.example;
+    } else if (typeof param.default !== 'undefined') {
+      value = param.default;
     }
-    value = firstExample.value;
-  } else if (
-    typeof param.schema !== 'undefined' &&
-    typeof param.schema.example !== 'undefined'
-  ) {
-    value = param.schema.example;
-  } else if (typeof param.default !== 'undefined') {
-    value = param.default;
-  }
+  } else {
 
-  return createHarParameterObjects(param, value);
+    if (values && typeof values[param.name] !== 'undefined') {
+      value = values[param.name];
+    } else if (typeof param.examples !== 'undefined') {
+      // If examples is specified, then we allow them to be "opt-in"
+      // Using the `x-use-in-snippets` vendor extension. If none of the
+      // examples have the vendor extension then this parameter will
+      // not be shown in the snippet. This gives openapi authors some
+      // control on which examples to include in snippets.
+
+      let codeSnippetExample = Object.values(param.examples).filter(
+        (example) => example['x-use-in-snippets'] || example['$ref']
+      )[0];
+
+      if (
+        codeSnippetExample && typeof codeSnippetExample['$ref'] === 'string' &&
+        /^#/.test(codeSnippetExample['$ref'])
+      ) {
+        codeSnippetExample = resolveRef(openApi, codeSnippetExample['$ref']);
+      }
+
+      value = codeSnippetExample ? codeSnippetExample.value : undefined;
+    }
+  }
+  return (value === undefined) ? null : createHarParameterObjects(param, value);
 };
 
 /**
@@ -521,14 +548,16 @@ const parseParametersToQuery = function (
       typeof param.in !== 'undefined' &&
       param.in.toLowerCase() === location
     ) {
-      // param.name is a safe key, because the spec defines
-      // that name MUST be unique
-      queryStrings[param.name] = getParameterValues(
+
+      var paramValue = getParameterValues(
         openApi,
         param,
         location,
         values
       );
+      // param.name is a safe key, because the spec defines
+      // that name MUST be unique
+      if (paramValue) { queryStrings[param.name] = paramValue }
     }
   }
 

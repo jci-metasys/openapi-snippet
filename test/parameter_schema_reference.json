@@ -30,6 +30,7 @@
             "in": "query",
             "name": "pet",
             "description": "Pet to add to the store",
+            "required": true,
             "schema": {
               "$ref": "#/components/schemas/NewPet"
             }
@@ -63,7 +64,12 @@
   "components": {
     "schemas": {
       "NewPet": {
-        "required": ["name"],
+        "example": {
+          "name": "Scooter"
+        },
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"

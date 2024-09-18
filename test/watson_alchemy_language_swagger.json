@@ -1,7 +1,10 @@
 {
   "$loki": 492,
   "basePath": "/calls",
-  "consumes": ["application/x-www-form-urlencoded", "application/json"],
+  "consumes": [
+    "application/x-www-form-urlencoded",
+    "application/json"
+  ],
   "definitions": {
     "Authors Response": {
       "properties": {
@@ -1151,7 +1154,9 @@
     "description": "The AlchemyLanguage API uses natural language processing technology and machine learning algorithms to extract semantic meta-data from content, such as information on people, places, companies, topics, facts, relationships, authors, and languages.",
     "title": "IBM Alchemy Language",
     "version": "1.0.0",
-    "x-tags": ["machine learning"]
+    "x-tags": [
+      "machine learning"
+    ]
   },
   "meta": {
     "created": 1486756139004,
@@ -1185,7 +1190,14 @@
       "in": "query",
       "name": "apikey",
       "required": false,
-      "type": "string"
+      "type": "string",
+      "examples": {
+        "typical": {
+          "summary": "Typical API Key",
+          "value": "abcdefghijk",
+          "x-use-in-snippets": true
+        }
+      }
     },
     "content_type": {
       "default": "application/x-www-form-urlencoded",
@@ -1225,7 +1237,10 @@
     },
     "disambiguate_formData": {
       "description": "Set this to 0 to hide entity disambiguation information in the response",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "disambiguate",
       "required": false,
@@ -1233,7 +1248,10 @@
     },
     "disambiguate_query": {
       "description": "Set this to 0 to hide entity disambiguation information in the response",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "disambiguate",
       "required": false,
@@ -1241,7 +1259,10 @@
     },
     "entities_formData": {
       "description": "Set this to 1 to identify entities in detected relations<br><b>This incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "entities",
       "required": false,
@@ -1249,7 +1270,10 @@
     },
     "entities_query": {
       "description": "Set this to 1 to identify entities in detected relations<br><b>This incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "entities",
       "required": false,
@@ -1257,7 +1281,10 @@
     },
     "extractLinks_formData": {
       "description": "Set this to 1 to include hyperlinks in the extracted web page text",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "extractLinks",
       "required": false,
@@ -1265,7 +1292,10 @@
     },
     "extractLinks_query": {
       "description": "Set this to 1 to include hyperlinks in the extracted web page text",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "extractLinks",
       "required": false,
@@ -1317,7 +1347,10 @@
     },
     "keywordExtractMode_formData": {
       "description": "keyword extraction mode",
-      "enum": ["normal", "strict"],
+      "enum": [
+        "normal",
+        "strict"
+      ],
       "in": "formData",
       "name": "keywordExtractMode",
       "required": false,
@@ -1325,7 +1358,10 @@
     },
     "keywordExtractMode_query": {
       "description": "keyword extraction mode",
-      "enum": ["normal", "strict"],
+      "enum": [
+        "normal",
+        "strict"
+      ],
       "in": "query",
       "name": "keywordExtractMode",
       "required": false,
@@ -1333,7 +1369,10 @@
     },
     "keywords_formData": {
       "description": "Set this to 1 to identify keywords in detected relations<br><b>This incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "keywords",
       "required": false,
@@ -1341,7 +1380,10 @@
     },
     "keywords_query": {
       "description": "Set this to 1 to identify keywords in detected relations<br><b>This incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "keywords",
       "required": false,
@@ -1349,7 +1391,10 @@
     },
     "knowledgeGraph_formData": {
       "description": "Set to 1 to include knowledge graph information in the results <br><b>Incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "knowledgeGraph",
       "required": false,
@@ -1357,7 +1402,10 @@
     },
     "knowledgeGraph_formData_combined": {
       "description": "Include knowledge graph information in the results for each applicable function in the combined call. This incurs one additional transaction for each function involved.",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "knowledgeGraph",
       "required": false,
@@ -1365,7 +1413,10 @@
     },
     "knowledgeGraph_query": {
       "description": "Set to 1 to include knowledge graph information in the results <br><b>Incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "knowledgeGraph",
       "required": false,
@@ -1373,7 +1424,10 @@
     },
     "knowledgeGraph_query_combined": {
       "description": "Include knowledge graph information in the results for each applicable function in the combined call. This incurs one additional transaction for each function involved.",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "knowledgeGraph",
       "required": false,
@@ -1381,7 +1435,10 @@
     },
     "linkedData_formData": {
       "description": "Set this to 0 to disable linkedData links in the response",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "linkedData",
       "required": false,
@@ -1389,7 +1446,10 @@
     },
     "linkedData_query": {
       "description": "Set this to 0 to disable linkedData links in the response",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "linkedData",
       "required": false,
@@ -1495,7 +1555,11 @@
     },
     "outputMode_formData": {
       "description": "Desired response format (default XML)",
-      "enum": ["json", "rdf", "xml"],
+      "enum": [
+        "json",
+        "rdf",
+        "xml"
+      ],
       "in": "formData",
       "name": "outputMode",
       "required": false,
@@ -1503,7 +1567,11 @@
     },
     "outputMode_query": {
       "description": "Desired response format (default XML)",
-      "enum": ["json", "rdf", "xml"],
+      "enum": [
+        "json",
+        "rdf",
+        "xml"
+      ],
       "in": "query",
       "name": "outputMode",
       "required": false,
@@ -1511,7 +1579,10 @@
     },
     "quotations_formData": {
       "description": "Set this to 1 to return quotations associated with detected entities",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "quotations",
       "required": false,
@@ -1519,7 +1590,10 @@
     },
     "quotations_query": {
       "description": "Set this to 1 to return quotations associated with detected entities",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "quotations",
       "required": false,
@@ -1527,7 +1601,10 @@
     },
     "requireEntities_formData": {
       "description": "Set this to 1 to only report relations that contain at least one entity",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "requireEntities",
       "required": false,
@@ -1535,7 +1612,10 @@
     },
     "requireEntities_query": {
       "description": "Set this to 1 to only report relations that contain at least one entity",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "requireEntities",
       "required": false,
@@ -1543,7 +1623,10 @@
     },
     "sentimentExcludeEntities_formData": {
       "description": "Set this to 1 to exclude entity name text from sentiment analysis (for example, do not analyze \"New\" in \"New York\")",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "sentimentExcludeEntities",
       "required": false,
@@ -1551,7 +1634,10 @@
     },
     "sentimentExcludeEntities_query": {
       "description": "Set this to 1 to exclude entity name text from sentiment analysis (for example, do not analyze \"New\" in \"New York\")",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "sentimentExcludeEntities",
       "required": false,
@@ -1559,7 +1645,10 @@
     },
     "sentiment_formData": {
       "description": "Set this to 1 to return sentient information for each detected result<br><b>Incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "sentiment",
       "required": false,
@@ -1567,7 +1656,10 @@
     },
     "sentiment_query": {
       "description": "Set this to 1 to return sentiment information for each detected result<br><b>Incurs an additional API transaction</b>",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "sentiment",
       "required": false,
@@ -1575,7 +1667,10 @@
     },
     "showSourceText_formData": {
       "description": "Set this to 1 to include the original source text in the API response (default 0)",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "showSourceText",
       "required": false,
@@ -1583,11 +1678,21 @@
     },
     "showSourceText_query": {
       "description": "Set this to 1 to include the original source text in the API response (default 0)",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "showSourceText",
       "required": false,
-      "type": "integer"
+      "type": "integer",
+      "examples": {
+        "typical": {
+          "summary": "Show Source Text",
+          "value": 1,
+          "x-use-in-snippets": true
+        }
+      }
     },
     "sourceText_formData": {
       "description": "Method used to obtain the source text from the HTML file (default cleaned_or_raw)",
@@ -1621,7 +1726,10 @@
     },
     "structuredEntities_formData": {
       "description": "Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "structuredEntities",
       "required": false,
@@ -1629,7 +1737,10 @@
     },
     "structuredEntities_query": {
       "description": "Set this to 0 to ignore structured entities, such as Quantity, EmailAddress, TwitterHandle, Hashtag, and IPAddress",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "structuredEntities",
       "required": false,
@@ -1693,7 +1804,10 @@
     },
     "useMetadata_formData": {
       "description": "Set this to 0 to ignore webpage metadata in the source text",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "formData",
       "name": "useMetadata",
       "required": false,
@@ -1701,7 +1815,10 @@
     },
     "useMetadata_query": {
       "description": "Set this to 0 to ignore webpage metadata in the source text",
-      "enum": [0, 1],
+      "enum": [
+        0,
+        1
+      ],
       "in": "query",
       "name": "useMetadata",
       "required": false,
@@ -1758,7 +1875,9 @@
           }
         },
         "summary": "Extracts dates from an HTML document",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       },
       "post": {
         "description": "Date extraction identifies dates that are mentioned in text. You can specify an anchor date to accurately interpret dates like \"next tuesday.\"",
@@ -1797,7 +1916,9 @@
           }
         },
         "summary": "Extracts dates from an HTML document",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       }
     },
     "/html/HTMLGetAuthors": {
@@ -1829,7 +1950,9 @@
           }
         },
         "summary": "Retrieves author information from an HTML document",
-        "tags": ["Authors"]
+        "tags": [
+          "Authors"
+        ]
       },
       "post": {
         "description": "The HTMLGetAuthors call is utilized to extract author information contained within the specified web page. AlchemyLanguage will process the posted HTML document, looking for author information.",
@@ -1862,7 +1985,9 @@
           }
         },
         "summary": "Retrieves author information from an HTML document",
-        "tags": ["Authors"]
+        "tags": [
+          "Authors"
+        ]
       }
     },
     "/html/HTMLGetCombinedData": {
@@ -1900,7 +2025,9 @@
           }
         },
         "summary": "Analyzes HTML with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"]
+        "tags": [
+          "Combined Call"
+        ]
       },
       "post": {
         "description": "HTMLGetCombinedData lets you combine multiple AlchemyLanguage HTML operations into a single API call. Concept, keyword, entity, and taxonomy operations are performed by default if no 'extract' parameter is specified.<br><br>Any of the parameters that can be passed in the individual extract methods can be passed in a combined call, but they will apply to any applicable features that are specified in the <code>extract</code> parameter. For example, if you pass <code>knowledgeGraph=1</code> in a combined request for <code>concepts</code>, <code>entities</code>, <code>keywords</code>, and <code>relations</code>, you will add a total of 4 extra transactions to the request.",
@@ -1939,7 +2066,9 @@
           }
         },
         "summary": "Analyzes HTML with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"]
+        "tags": [
+          "Combined Call"
+        ]
       }
     },
     "/html/HTMLGetEmotion": {
@@ -1983,7 +2112,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text from an HTML document",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       },
       "post": {
         "description": "Detects document-level emotion conveyed by the source text. Returns scores for anger, disgust, fear, joy, and sadness.",
@@ -2028,7 +2159,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text from an HTML document",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/html/HTMLGetFeedLinks": {
@@ -2057,7 +2190,9 @@
           }
         },
         "summary": "Extracts RSS/Atom feeds from HTML",
-        "tags": ["Feed Detection"]
+        "tags": [
+          "Feed Detection"
+        ]
       },
       "post": {
         "description": "Identifies and returns RSS/ATOM feed links found in an HTML document.",
@@ -2087,7 +2222,9 @@
           }
         },
         "summary": "Extracts RSS/Atom feeds from HTML",
-        "tags": ["Feed Detection"]
+        "tags": [
+          "Feed Detection"
+        ]
       }
     },
     "/html/HTMLGetMicroformatData": {
@@ -2119,7 +2256,9 @@
           }
         },
         "summary": "Extracts microformat data from an HTML document",
-        "tags": ["Microformats"]
+        "tags": [
+          "Microformats"
+        ]
       },
       "post": {
         "description": "The HTMLGetMicroformatData call is utilized to extract microformat content from a posted HTML document. AlchemyLanguage will process the posted HTML document, looking for a variety of microformat data structures (hCards, geo, adr, etc.).",
@@ -2152,7 +2291,9 @@
           }
         },
         "summary": "Extracts microformat data from an HTML document",
-        "tags": ["Microformats"]
+        "tags": [
+          "Microformats"
+        ]
       }
     },
     "/html/HTMLGetPubDate": {
@@ -2184,7 +2325,9 @@
           }
         },
         "summary": "Retrieves publication date information from an HTML document",
-        "tags": ["Publication Date"]
+        "tags": [
+          "Publication Date"
+        ]
       },
       "post": {
         "description": "The HTMLGetPubDate call is utilized to extract publication date information contained within the specified web page. AlchemyLanguage will process the posted HTML document, looking for publication date information.",
@@ -2217,7 +2360,9 @@
           }
         },
         "summary": "Retrieves publication date information from an HTML document",
-        "tags": ["Publication Date"]
+        "tags": [
+          "Publication Date"
+        ]
       }
     },
     "/html/HTMLGetRankedConcepts": {
@@ -2270,7 +2415,9 @@
           }
         },
         "summary": "Returns concepts found in an HTML document",
-        "tags": ["Concepts"]
+        "tags": [
+          "Concepts"
+        ]
       },
       "post": {
         "description": "The HTMLGetRankedConcepts call is utilized to extract a relevancy-ranked list of concept tags for a posted HTML document. AlchemyLanguage will extract text from the posted HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform concept tagging operations.",
@@ -2324,7 +2471,9 @@
           }
         },
         "summary": "Returns concepts found in an HTML document",
-        "tags": ["Concepts"]
+        "tags": [
+          "Concepts"
+        ]
       }
     },
     "/html/HTMLGetRankedKeywords": {
@@ -2377,7 +2526,9 @@
           }
         },
         "summary": "Extracts keywords from an HTML document",
-        "tags": ["Keywords"]
+        "tags": [
+          "Keywords"
+        ]
       },
       "post": {
         "description": "The HTMLGetRankedKeywords call is used to extract a relevancy-ranked list of topic keywords from a posted HTML document. AlchemyLanguage will extract text from the posted HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform keyword extraction operations.",
@@ -2431,7 +2582,9 @@
           }
         },
         "summary": "Extracts keywords from an HTML document",
-        "tags": ["Keywords"]
+        "tags": [
+          "Keywords"
+        ]
       }
     },
     "/html/HTMLGetRankedNamedEntities": {
@@ -2499,7 +2652,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from an HTML document",
-        "tags": ["Entities"]
+        "tags": [
+          "Entities"
+        ]
       },
       "post": {
         "description": "The HTMLGetRankedNamedEntities call is used to extract a grouped, relevancy-ranked list of named entities (people, companies, organizations, etc.) from a posted HTML document. AlchemyLanguage will extract text from the posted HTML document (ignoring navigation links, advertisements, and other undesirable content), and perform entity extraction operations.",
@@ -2568,7 +2723,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from an HTML document",
-        "tags": ["Entities"]
+        "tags": [
+          "Entities"
+        ]
       }
     },
     "/html/HTMLGetRankedTaxonomy": {
@@ -2609,7 +2766,9 @@
           }
         },
         "summary": "Categorizes the content of an HTML document",
-        "tags": ["Taxonomy"]
+        "tags": [
+          "Taxonomy"
+        ]
       },
       "post": {
         "description": "The HTMLGetRankedTaxonomy call is used to categorize a posted HTML document. AlchemyLanguage will extract text and other important content from the posted HTML document structure and perform document categorization operations. AlchemyLanguage will extract text from the posted HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform taxonomy classification operations.",
@@ -2651,7 +2810,9 @@
           }
         },
         "summary": "Categorizes the content of an HTML document",
-        "tags": ["Taxonomy"]
+        "tags": [
+          "Taxonomy"
+        ]
       }
     },
     "/html/HTMLGetRawText": {
@@ -2680,7 +2841,9 @@
           }
         },
         "summary": "Extracts all text from an HTML document",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       },
       "post": {
         "description": "The HTMLGetRawText call is utilized to extract all text from a posted web page. AlchemyLanguage will extract text from the posted HTML document structure, including page navigation, advertisements, and other page content. To ignore this content, please use the HTMLGetText call.",
@@ -2710,7 +2873,9 @@
           }
         },
         "summary": "Extracts all text from an HTML document",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       }
     },
     "/html/HTMLGetRelations": {
@@ -2784,7 +2949,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from an HTML document",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       },
       "post": {
         "description": "The HTMLGetRelations call is utilized to extract Subject-Action-Object relations from a posted HTML document. AlchemyLanguage will extract text from the HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform relation extraction operations.",
@@ -2859,7 +3026,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from an HTML document",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       }
     },
     "/html/HTMLGetTargetedEmotion": {
@@ -2906,7 +3075,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from an HTML document",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       },
       "post": {
         "description": "Searches the source text for specified target phrases and analyzes the emotions that they convey. Returns scores for anger, disgust, fear, joy, and sadness.",
@@ -2954,7 +3125,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from an HTML document",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/html/HTMLGetTargetedSentiment": {
@@ -3001,7 +3174,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases in an HTML document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       },
       "post": {
         "description": "The HTMLGetTargetedSentiment call is utilized to extract positive/negative sentiment targeted towards a specific user-specified target phrase inside the text of a posted HTML document. AlchemyLanguage will extract text from the posted HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform sentiment analysis operations.",
@@ -3049,7 +3224,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases in an HTML document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/html/HTMLGetText": {
@@ -3096,7 +3273,9 @@
           }
         },
         "summary": "Extracts primary text from an HTML document (avoids advertisements and other undesirable content)",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       },
       "post": {
         "description": "The HTMLGetText call is utilized to extract the primary page / article text from a posted web page. AlchemyLanguage will extract text from the posted HTML document structure, ignoring page navigation, advertisements, and other undesirable page content.",
@@ -3144,7 +3323,9 @@
           }
         },
         "summary": "Extracts primary text from an HTML document (avoids advertisements and other undesirable content)",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       }
     },
     "/html/HTMLGetTextSentiment": {
@@ -3188,7 +3369,9 @@
           }
         },
         "summary": "Returns sentiment information for an HTML document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       },
       "post": {
         "description": "The HTMLGetTextSentiment call is utilized to extract positive/negative sentiment from a posted HTML document. AlchemyLanguage will extract text from the posted HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform sentiment analysis operations.",
@@ -3233,7 +3416,9 @@
           }
         },
         "summary": "Returns sentiment information for an HTML document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/html/HTMLGetTitle": {
@@ -3268,7 +3453,9 @@
           }
         },
         "summary": "Extracts title information from an HTML document",
-        "tags": ["Title Extraction"]
+        "tags": [
+          "Title Extraction"
+        ]
       },
       "post": {
         "description": "The HTMLGetTitle call is utilized to extract title information from a posted web page. The posted HTML document is processed, extracting any title information.",
@@ -3304,7 +3491,9 @@
           }
         },
         "summary": "Extracts title information from an HTML document",
-        "tags": ["Title Extraction"]
+        "tags": [
+          "Title Extraction"
+        ]
       }
     },
     "/html/HTMLGetTypedRelations": {
@@ -3342,7 +3531,9 @@
           }
         },
         "summary": "Identifies relations between entities found in HTML content",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       },
       "post": {
         "description": "Identifies entities in text and returns different types of relations that exist between them. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results to your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio",
@@ -3381,7 +3572,9 @@
           }
         },
         "summary": "Identifies relations between entities found in HTML content",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       }
     },
     "/text/TextExtractDates": {
@@ -3419,7 +3612,9 @@
           }
         },
         "summary": "Extracts dates from text",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       },
       "post": {
         "description": "Date extraction identifies dates that are mentioned in text. You can specify an anchor date to accurately interpret dates like \"next tuesday.\"",
@@ -3458,7 +3653,9 @@
           }
         },
         "summary": "Extracts dates from text",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       }
     },
     "/text/TextGetCombinedData": {
@@ -3496,7 +3693,9 @@
           }
         },
         "summary": "Analyzes text with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"]
+        "tags": [
+          "Combined Call"
+        ]
       },
       "post": {
         "description": "TextGetCombinedData lets you combine multiple AlchemyLanguage text operations into a single API call. Concept, keyword, entity, and taxonomy operations are performed by default if no 'extract' parameter is specified.<br><br>Any of the parameters that can be passed in the individual extract methods can be passed in a combined call, but they will apply to any applicable features that are specified in the <code>extract</code> parameter. For example, if you pass <code>knowledgeGraph=1</code> in a combined request for <code>concepts</code>, <code>entities</code>, <code>keywords</code>, and <code>relations</code>, you will add a total of 4 extra transactions to the request.",
@@ -3535,7 +3734,9 @@
           }
         },
         "summary": "Analyzes text with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"]
+        "tags": [
+          "Combined Call"
+        ]
       }
     },
     "/text/TextGetEmotion": {
@@ -3570,7 +3771,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text",
-        "tags": ["Emotion Analysis"],
+        "tags": [
+          "Emotion Analysis"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -3798,7 +4001,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/text/TextGetLanguage": {
@@ -3839,7 +4044,9 @@
           }
         },
         "summary": "Detects the language of a text document",
-        "tags": ["Language"]
+        "tags": [
+          "Language"
+        ]
       },
       "post": {
         "description": "TThe TextGetLanguage call is utilized to detect the language utilized within a posted text document.",
@@ -3881,7 +4088,9 @@
           }
         },
         "summary": "Detects the language of a text document",
-        "tags": ["Language"]
+        "tags": [
+          "Language"
+        ]
       }
     },
     "/text/TextGetRankedConcepts": {
@@ -3922,7 +4131,9 @@
           }
         },
         "summary": "Returns concepts found in a text document",
-        "tags": ["Concepts"],
+        "tags": [
+          "Concepts"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -4112,7 +4323,9 @@
           }
         },
         "summary": "Returns concepts found in a text document",
-        "tags": ["Concepts"]
+        "tags": [
+          "Concepts"
+        ]
       }
     },
     "/text/TextGetRankedKeywords": {
@@ -4153,7 +4366,9 @@
           }
         },
         "summary": "Extracts keywords from a text document",
-        "tags": ["Keywords"],
+        "tags": [
+          "Keywords"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -4343,7 +4558,9 @@
           }
         },
         "summary": "Extracts keywords from a text document",
-        "tags": ["Keywords"]
+        "tags": [
+          "Keywords"
+        ]
       }
     },
     "/text/TextGetRankedNamedEntities": {
@@ -4399,7 +4616,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from a text document",
-        "tags": ["Entities"]
+        "tags": [
+          "Entities"
+        ]
       },
       "post": {
         "description": "The TextGetRankedNamedEntities call is utilized to extract a grouped, ranked list of named entities (people, companies, organizations, etc.) from within a posted text document.",
@@ -4456,7 +4675,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from a text document",
-        "tags": ["Entities"]
+        "tags": [
+          "Entities"
+        ]
       }
     },
     "/text/TextGetRankedTaxonomy": {
@@ -4485,7 +4706,9 @@
           }
         },
         "summary": "Categorizes the content of a text document",
-        "tags": ["Taxonomy"],
+        "tags": [
+          "Taxonomy"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -4663,7 +4886,9 @@
           }
         },
         "summary": "Categorizes the content of a text document",
-        "tags": ["Taxonomy"]
+        "tags": [
+          "Taxonomy"
+        ]
       }
     },
     "/text/TextGetRelations": {
@@ -4725,7 +4950,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from a text document",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       },
       "post": {
         "description": "The TextGetRelations call is utilized to extract Subject-Action-Object relations from a given text document.",
@@ -4788,7 +5015,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from a text document",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       }
     },
     "/text/TextGetTargetedEmotion": {
@@ -4826,7 +5055,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from text",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       },
       "post": {
         "description": "Searches the source text for specified target phrases and analyzes the emotions that they convey. Returns scores for anger, disgust, fear, joy, and sadness.",
@@ -4865,7 +5096,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from text",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/text/TextGetTargetedSentiment": {
@@ -4900,7 +5133,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases in a text document",
-        "tags": ["Sentiment"],
+        "tags": [
+          "Sentiment"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -5036,7 +5271,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases in a text document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/text/TextGetTextSentiment": {
@@ -5068,7 +5305,9 @@
           }
         },
         "summary": "Returns sentiment information for a text document",
-        "tags": ["Sentiment"],
+        "tags": [
+          "Sentiment"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -5344,7 +5583,9 @@
           }
         },
         "summary": "Returns sentiment information for a text document",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/text/TextGetTypedRelations": {
@@ -5379,7 +5620,9 @@
           }
         },
         "summary": "Identifies relations between entities found in text",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       },
       "post": {
         "description": "Identifies entities in text and returns different types of relations that exist between them. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results to your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio",
@@ -5415,7 +5658,9 @@
           }
         },
         "summary": "Identifies relations between entities found in text",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       }
     },
     "/url/URLExtractDates": {
@@ -5450,7 +5695,9 @@
           }
         },
         "summary": "Extracts dates from the text on a webpage",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       },
       "post": {
         "description": "Date extraction identifies dates that are mentioned in text. You can specify an anchor date to accurately interpret dates like \"next tuesday.\"",
@@ -5486,7 +5733,9 @@
           }
         },
         "summary": "Extracts dates from the text on a webpage",
-        "tags": ["Date Extraction"]
+        "tags": [
+          "Date Extraction"
+        ]
       }
     },
     "/url/URLGetAuthors": {
@@ -5515,7 +5764,9 @@
           }
         },
         "summary": "Retrieves author information from a web page",
-        "tags": ["Authors"],
+        "tags": [
+          "Authors"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -5587,7 +5838,9 @@
           }
         },
         "summary": "Retrieves author information from a web page",
-        "tags": ["Authors"]
+        "tags": [
+          "Authors"
+        ]
       }
     },
     "/url/URLGetCombinedData": {
@@ -5622,7 +5875,9 @@
           }
         },
         "summary": "Analyzes a web page with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"],
+        "tags": [
+          "Combined Call"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": null,
@@ -5785,7 +6040,9 @@
           }
         },
         "summary": "Analyzes a web page with multiple AlchemyLanguage operations",
-        "tags": ["Combined Call"]
+        "tags": [
+          "Combined Call"
+        ]
       }
     },
     "/url/URLGetEmotion": {
@@ -5826,7 +6083,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text from webpage",
-        "tags": ["Emotion Analysis"],
+        "tags": [
+          "Emotion Analysis"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -5970,7 +6229,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by text from a webpage",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/url/URLGetFeedLinks": {
@@ -5999,7 +6260,9 @@
           }
         },
         "summary": "Extracts RSS/Atom feeds from a webpage",
-        "tags": ["Feed Detection"]
+        "tags": [
+          "Feed Detection"
+        ]
       },
       "post": {
         "description": "Identifies and returns RSS/ATOM feed links found on a webpage.",
@@ -6029,7 +6292,9 @@
           }
         },
         "summary": "Extracts RSS/Atom feeds from a webpage",
-        "tags": ["Feed Detection"]
+        "tags": [
+          "Feed Detection"
+        ]
       }
     },
     "/url/URLGetLanguage": {
@@ -6067,7 +6332,9 @@
           }
         },
         "summary": "Detects the language of a web page",
-        "tags": ["Language"]
+        "tags": [
+          "Language"
+        ]
       },
       "post": {
         "description": "The URLGetLanguage call is utilized to detect the language utilized within a given web page. AlchemyLanguage will download the requested URL, extracting text from the HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform language detection operations.",
@@ -6106,7 +6373,9 @@
           }
         },
         "summary": "Detects the language of a web page",
-        "tags": ["Language"]
+        "tags": [
+          "Language"
+        ]
       }
     },
     "/url/URLGetMicroformatData": {
@@ -6135,7 +6404,9 @@
           }
         },
         "summary": "Extracts microformat data from a web page",
-        "tags": ["Microformats"]
+        "tags": [
+          "Microformats"
+        ]
       },
       "post": {
         "description": "The URLGetMicroformatData call is utilized to extract structured microformats data from a given web page. AlchemyLanguage will retrieve the requested URL, process the retrieved HTML document, and look for a variety of microformat data structures (hCards, geo, adr, etc.).",
@@ -6165,7 +6436,9 @@
           }
         },
         "summary": "Extracts microformat data from a web page",
-        "tags": ["Microformats"]
+        "tags": [
+          "Microformats"
+        ]
       }
     },
     "/url/URLGetPubDate": {
@@ -6194,7 +6467,9 @@
           }
         },
         "summary": "Retrieves publication date information from a web page",
-        "tags": ["Publication Date"]
+        "tags": [
+          "Publication Date"
+        ]
       },
       "post": {
         "description": "The URLGetPubDate call is utilized to extract publication date information contained within the specified web page. contained within the specified web page. AlchemyLanguage will download the requested URL, process the retrieved HTML document, looking for publication date information.",
@@ -6224,7 +6499,9 @@
           }
         },
         "summary": "Retrieves publication date information from a web page",
-        "tags": ["Publication Date"]
+        "tags": [
+          "Publication Date"
+        ]
       }
     },
     "/url/URLGetRankedConcepts": {
@@ -6274,7 +6551,9 @@
           }
         },
         "summary": "Returns concepts found on a web page",
-        "tags": ["Concepts"]
+        "tags": [
+          "Concepts"
+        ]
       },
       "post": {
         "description": "The URLGetRankedConcepts call is utilized to extract a relevancy-ranked list of concept tags for a given web page. AlchemyLanguage will download the requested URL, extracting text from the HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform concept tagging operations.",
@@ -6325,7 +6604,9 @@
           }
         },
         "summary": "Returns concepts found on a web page",
-        "tags": ["Concepts"]
+        "tags": [
+          "Concepts"
+        ]
       }
     },
     "/url/URLGetRankedKeywords": {
@@ -6375,7 +6656,9 @@
           }
         },
         "summary": "Extracts keywords from a web page",
-        "tags": ["Keywords"],
+        "tags": [
+          "Keywords"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -6510,7 +6793,9 @@
           }
         },
         "summary": "Extracts keywords from a web page",
-        "tags": ["Keywords"]
+        "tags": [
+          "Keywords"
+        ]
       }
     },
     "/url/URLGetRankedNamedEntities": {
@@ -6575,7 +6860,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from a web page",
-        "tags": ["Entities"],
+        "tags": [
+          "Entities"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -6740,7 +7027,9 @@
           }
         },
         "summary": "Extracts named entities (people, companies, etc) from a web page",
-        "tags": ["Entities"]
+        "tags": [
+          "Entities"
+        ]
       }
     },
     "/url/URLGetRankedTaxonomy": {
@@ -6778,7 +7067,9 @@
           }
         },
         "summary": "Categorizes the content of a web page",
-        "tags": ["Taxonomy"],
+        "tags": [
+          "Taxonomy"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -6856,7 +7147,9 @@
           }
         },
         "summary": "Categorizes the content of a web page",
-        "tags": ["Taxonomy"]
+        "tags": [
+          "Taxonomy"
+        ]
       }
     },
     "/url/URLGetRawText": {
@@ -6885,7 +7178,9 @@
           }
         },
         "summary": "Extracts all text from a web page",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       },
       "post": {
         "description": "The URLGetRawText call is utilized to extract all text from a web page. AlchemyLanguage will download the requested URL, extract text from the HTML document structure, including page navigation, advertisements, and other page content. To ignore this content, please use the URLGetText call.",
@@ -6915,7 +7210,9 @@
           }
         },
         "summary": "Extracts all text from a web page",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       }
     },
     "/url/URLGetRelations": {
@@ -6986,7 +7283,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from a web page",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       },
       "post": {
         "description": "The URLGetRelations call is utilized to extract Subject-Action-Object relations from a given web page. AlchemyLanguage will download the requested URL, extracting text from the HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform relation extraction operations.",
@@ -7058,7 +7357,9 @@
           }
         },
         "summary": "Extracts Subject-Action-Object relations from a web page",
-        "tags": ["Relations"]
+        "tags": [
+          "Relations"
+        ]
       }
     },
     "/url/URLGetTargetedEmotion": {
@@ -7102,7 +7403,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from a webpage",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       },
       "post": {
         "description": "Searches the source text for specified target phrases and analyzes the emotions that they convey. Returns scores for anger, disgust, fear, joy, and sadness.",
@@ -7147,7 +7450,9 @@
           }
         },
         "summary": "Analyzes the emotion conveyed by target phrases from a webpage",
-        "tags": ["Emotion Analysis"]
+        "tags": [
+          "Emotion Analysis"
+        ]
       }
     },
     "/url/URLGetTargetedSentiment": {
@@ -7191,7 +7496,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases on a web page",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       },
       "post": {
         "description": "The URLGetTargetedSentiment call is utilized to extract positive / negative sentiment targeted towards a specific user-specified target phrase inside the text of a given web page. AlchemyLanguage will download the requested URL, extracting text from the HTML document structure (ignoring navigation links, advertisements, and other undesirable content), and perform sentiment extraction operations.",
@@ -7236,7 +7543,9 @@
           }
         },
         "summary": "Returns sentiment information for specified phrases on a web page",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/url/URLGetText": {
@@ -7280,7 +7589,9 @@
           }
         },
         "summary": "Extracts primary text from a web page (avoids advertisements and other undesirable content)",
-        "tags": ["Text Extraction"],
+        "tags": [
+          "Text Extraction"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": null,
@@ -7332,7 +7643,9 @@
           }
         },
         "summary": "Extracts primary text from a web page (avoids advertisements and other undesirable content)",
-        "tags": ["Text Extraction"]
+        "tags": [
+          "Text Extraction"
+        ]
       }
     },
     "/url/URLGetTextSentiment": {
@@ -7373,7 +7686,9 @@
           }
         },
         "summary": "Returns sentiment information for a web page",
-        "tags": ["Sentiment"],
+        "tags": [
+          "Sentiment"
+        ],
         "x-apih-advice": {
           "topJQueryAjaxParams": null,
           "topPayloadParams": [
@@ -7515,7 +7830,9 @@
           }
         },
         "summary": "Returns sentiment information for a web page",
-        "tags": ["Sentiment"]
+        "tags": [
+          "Sentiment"
+        ]
       }
     },
     "/url/URLGetTitle": {
@@ -7547,7 +7864,9 @@
           }
         },
         "summary": "Extracts title information from a web page",
-        "tags": ["Title Extraction"]
+        "tags": [
+          "Title Extraction"
+        ]
       },
       "post": {
         "description": "The URLGetTitle call is utilized to extract title information from a web page. The requested URL is downloaded, and the retrieved HTML document is processed, extracting any title information.",
@@ -7580,7 +7899,9 @@
           }
         },
         "summary": "Extracts title information from a web page",
-        "tags": ["Title Extraction"]
+        "tags": [
+          "Title Extraction"
+        ]
       }
     },
     "/url/URLGetTypedRelations": {
@@ -7612,7 +7933,9 @@
           }
         },
         "summary": "Identifies relations between entities found in text from a webpage",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       },
       "post": {
         "description": "Identifies entities in the text from a webpage and returns different types of relations that exist between them. For example, the entities \"Oscar\" and \"Leonardo DiCaprio\" might be linked by an \"awardedTo\" relation. To tailor results to your domain, you can specify your own custom entities and relations with custom models in Watson Knowledge Studio",
@@ -7645,12 +7968,19 @@
           }
         },
         "summary": "Identifies relations between entities found in text from a webpage",
-        "tags": ["Typed Relations"]
+        "tags": [
+          "Typed Relations"
+        ]
       }
     }
   },
-  "produces": ["application/json", "application/xml"],
-  "schemes": ["https"],
+  "produces": [
+    "application/json",
+    "application/xml"
+  ],
+  "schemes": [
+    "https"
+  ],
   "swagger": "2.0",
   "x-apih-ghusage": {
     "count": 0,

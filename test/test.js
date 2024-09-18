@@ -12,7 +12,7 @@ const WatsonOpenAPI = require('./watson_alchemy_language_swagger.json');
 const IBMOpenAPI = require('./ibm_watson_alchemy_data_news_api.json');
 const PetStoreOpenAPI = require('./petstore_swagger.json');
 const PetStoreOpenAPI3 = require('./petstore_oas.json');
-const ParameterSchemaReferenceAPI = require('./parameter_schema_reference');
+const ParameterSchemaReferenceAPI = require('./parameter_schema_reference.json');
 const ParameterExampleReferenceAPI = require('./parameter_example_swagger.json');
 const FormDataExampleReferenceAPI = require('./form_data_example.json');
 const FormUrlencodedExampleAPI = require('./form_urlencoded_example.json');
@@ -163,6 +163,18 @@ test('Referenced query parameters should be resolved', function (t) {
   t.end();
 });
 
+test('Query parameters that are not required and not explicitly asked for should not show up', function (t) {
+  const result = OpenAPISnippets.getEndpointSnippets(
+    WatsonOpenAPI,
+    '/html/HTMLExtractDates',
+    'get',
+    ['node_request']
+  );
+  const snippet = result.snippets[0].content;
+  t.false(/html_query/.test(snippet));
+  t.end();
+});
+
 test('Resolve samples from nested examples', function (t) {
   const result = OpenAPISnippets.getEndpointSnippets(
     PetStoreOpenAPI,
@@ -183,14 +195,14 @@ test('Parameters that are Schema References Are Dereferenced', function (t) {
     ParameterSchemaReferenceAPI,
     '/pets',
     'post',
-    ['node_request']
+    ['shell_curl']
   );
   const snippet = result.snippets[0].content;
-  t.true(/pet: 'SOME_OBJECT_VALUE'/.test(snippet));
+  t.true(/pets\?name=Scooter/.test(snippet));
   t.end();
 });
 
-test('Testing the case when an example is provided, use the provided example value', function (t) {
+test('Testing the case when an example is provided on required parameter, use the provided example value', function (t) {
   t.plan(2);
   const result = OpenAPISnippets.getEndpointSnippets(
     ParameterExampleReferenceAPI,
@@ -199,8 +211,9 @@ test('Testing the case when an example is provided, use the provided example val
     ['node_request']
   );
   const snippet = result.snippets[0].content;
-  t.true(/ {tags: 'dog,cat', limit: '10'}/.test(snippet));
-  t.false(/SOME_INTEGER_VALUE/.test(snippet));
+  t.true(/ {tags: 'dog,cat'}/.test(snippet));
+  // on the other hand limit is not required and so it won't be in the snippet
+  t.false(/ {limit: '10'}/.test(snippet));
   t.end();
 });
 
@@ -302,8 +315,9 @@ test('Query Params Defined for all methods should be resolved', function (t) {
     ['node_request']
   );
   const snippet = result.snippets[0].content;
-  t.true(/ {tags: 'dog,cat', limit: '10'}/.test(snippet));
-  t.false(/SOME_INTEGER_VALUE/.test(snippet));
+  t.true(/ {tags: 'dog,cat'}/.test(snippet));
+  // limit is not required and won't be included
+  t.false(/{limit: '10'/.test(snippet));
   t.end();
 });
 
@@ -1072,13 +1086,26 @@ test('Cookie: id={id} with id = {role: "admin", firstName: "Alex", age: 34}', fu
 
 //// More Tests with Snippets
 
+/**
+ * Overrides the definition of {@link parameter} as specified by the other arguments to this method.
+ *
+ * Since this method is used for testing how the value is serialized, we always mark the parameter as required
+ * as well, regardless of what the original parameter definition was.
+ * @param {} parameter The parameter to customize
+ * @param {*} value The new example value
+ * @param {*} locationOfParameter Where this parameter is to be located in the spec (query, header, path, cookie)
+ * @param {*} locationOfExample Where are we going to locate this (example, examples, default)
+ * @param {*} style
+ * @param {*} explode
+ */
 const setParameterValues = function (
   parameter,
   value,
   locationOfParameter,
   locationOfExample,
   style,
-  explode
+  explode,
+  required
 ) {
   if (typeof style === 'undefined') {
     delete parameter.style;
@@ -1104,10 +1131,13 @@ const setParameterValues = function (
     parameter.examples = {
       firstExample: {
         summary: 'This is a summary',
-        value,
+        value
       },
     };
   }
+
+  parameter.required = true;
+
 };
 
 /**
@@ -1149,6 +1179,7 @@ const runParameterTest = function (t, options) {
     explode,
     expectedString,
     values,
+    required,
   } = options;
 
   const apiCopy = JSON.parse(JSON.stringify(api));
@@ -1160,7 +1191,8 @@ const runParameterTest = function (t, options) {
     locationOfParameter,
     locationOfExample,
     style,
-    explode
+    explode,
+    required
   );
   const result = OpenAPISnippets.getEndpointSnippets(
     apiCopy,
@@ -1633,7 +1665,7 @@ test('Header parameter defined in operation overrides header parameter of same n
     ['shell_curl']
   );
   const snippet = result.snippets[0].content;
-  t.match(snippet, /--header 'X-MYHEADER: SOME_STRING_VALUE'/);
+  t.match(snippet, /--header 'X-MYHEADER: DOGS-ONLY'/);
   t.end();
 });
 

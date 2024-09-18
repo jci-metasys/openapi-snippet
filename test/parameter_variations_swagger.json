@@ -30,6 +30,7 @@
                         "name": "id",
                         "in": "query",
                         "explode": false,
+                        "required": true,
                         "example": {
                             "role": "admin",
                             "firstName": "Alex",
@@ -106,6 +107,13 @@
                 {
                     "name": "X-MYHEADER",
                     "in": "header",
+                    "examples": {
+                        "typical": {
+                            "summary": "Header Value",
+                            "value": "DOGS-ONLY",
+                            "x-use-in-snippets": true
+                        }
+                    },
                     "schema": {
                         "type": "string"
                     }
