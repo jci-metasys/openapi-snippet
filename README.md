@@ -83,6 +83,47 @@ For example:
 ]
 ```
 
+## Parameter Examples
+
+Parameter examples are used to generate code snippets. However, it generally
+doesn't make sense to include every parameter of an operation in a code snippet.
+Using every parameter is problematic for several reasons:
+
+- It may result in an bad request when query parameters are mutually exclusive.
+- It may result in a very complicated looking code snippet.
+- It may stress a less common use case or a more advanced use case. For example,
+  including a custom header for an advanced use case.
+
+openapi-snippet follows these rules for determining if a parameter is shown in
+a code snippet.
+
+- All required parameters are represented in the code snippet. The snippet looks
+  for an example value in the following keys of the parameter picking the first
+  one it finds: `example`, the first example in `examples`, `schema.example` and
+  finally `default`.
+- All path parameters are required even if they don't explicitly state that they
+  are required. Therefore all path parameters are shown in code snippets.
+- Non-required parameters are not shown in code snippets by default. If an
+  example would be enhanced by including a parameter you can force it to be used
+  by doing the following:
+
+  - Use an `examples` key on the parameter and add at least one example.
+  - Mark one of the examples with the following key `x-use-in-snippets` set to
+    `true`. Here's an example parameter:
+
+    ```yaml
+    name: fqr
+    in: query
+    examples:
+      typical:
+        summary: An FQR
+        value: site:host/Folder.AV1
+        x-use-in-snippets: true
+    ```
+
+    Now the `fqr` query parameter will be used in the code snippet with the
+    value `"site:host/Folder.AV1"`.
+
 ## Targets
 Currently, OpenAPI Snippet supports the following [targets](https://github.com/Kong/httpsnippet/tree/master/src/targets) (depending on the HTTP Snippet library):
 
@@ -112,5 +153,7 @@ Currently, OpenAPI Snippet supports the following [targets](https://github.com/K
 
 If only the language is provided (e.g., `c`), the default library will be selected.
 
+To use a custom code generator use `addTargetClient` and use the httpsnippet 2.0.0
+definition of target clients.
 
 License: MIT
