@@ -212,9 +212,12 @@ const capitalizeFirstLetter = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
+const addTargetClient = HTTPSnippet.addTargetClient;
+
 module.exports = {
   getSnippets,
   getEndpointSnippets,
+  addTargetClient
 };
 
 // The if is only for when this is run from the browser
