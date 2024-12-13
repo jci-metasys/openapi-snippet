@@ -247,6 +247,37 @@ test('If a server has url with variables those should be substituted', function 
   t.end();
 });
 
+test('If a path has servers with variables those should be substituted', function (t) {
+  const result = OpenAPISnippets.getEndpointSnippets(
+    FormDataExampleReferenceAPI,
+    '/about',
+    'get',
+    ['csharp_restsharp']
+  );
+  const snippet = result.snippets[0].content;
+  t.true(
+    /new RestClient\("http:\/\/example.com\/api\/about"/.test(snippet)
+  );
+  t.false(/{hostname}/.test(snippet));
+  t.end();
+});
+
+test('If an operation has servers with variables those should be substituted', function (t) {
+  const result = OpenAPISnippets.getEndpointSnippets(
+    FormDataExampleReferenceAPI,
+    '/about2',
+    'get',
+    ['csharp_restsharp']
+  );
+  const snippet = result.snippets[0].content;
+  t.true(
+    /new RestClient\("http:\/\/otherexample.com\/api\/about2"/.test(snippet)
+  );
+  t.false(/{hostname}/.test(snippet));
+  t.end();
+});
+
+
 test('Generate snippet with multipart/form-data with array', function (t) {
   const result = OpenAPISnippets.getEndpointSnippets(
     FormDataExampleReferenceAPI,

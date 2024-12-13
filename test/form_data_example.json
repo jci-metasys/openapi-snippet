@@ -26,6 +26,48 @@
     }
   ],
   "paths": {
+    "/about": {
+      "servers": [
+        {
+          "url": "http://{hostname}/api",
+          "variables": {
+            "hostname": {
+              "default": "example.com"
+            }
+          }
+        }
+      ],
+      "get": {
+        "description": "Get About Info",
+        "operationId": "getAboutInfo",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/about2": {
+      "get": {
+        "description": "Get About Info",
+        "operationId": "getAboutInfo",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "servers": [
+          {
+            "url": "http://{hostname}/api",
+            "variables": {
+              "hostname": {
+                "default": "otherexample.com"
+              }
+            }
+          }
+        ]
+      }
+    },
     "/pets": {
       "patch": {
         "description": "Creates a new pet in the store.  Duplicates are allowed",

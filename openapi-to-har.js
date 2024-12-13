@@ -407,18 +407,18 @@ const getPayloads = function (openApi, path, method) {
  * @return {string}         Base URL
  */
 const getBaseUrl = function (openApi, path, method) {
-  if (openApi.paths[path][method].servers)
-    return openApi.paths[path][method].servers[0].url;
-  if (openApi.paths[path].servers) return openApi.paths[path].servers[0].url;
+  if (openApi.paths[path][method].servers && openApi.paths[path][method].servers.length > 0) {
+    const servers = openApi.paths[path][method].servers
+    return getAServerUrlWithExpandedVariables(servers);
+  }
+  if (openApi.paths[path].servers && openApi.paths[path].servers.length > 0) {
+    const servers = openApi.paths[path].servers;
+    return getAServerUrlWithExpandedVariables(servers);
+  }
 
   if (openApi.servers && openApi.servers.length > 0) {
-    let firstServer = openApi.servers[0];
-    let url = firstServer.url;
-    const variables = firstServer.variables || {};
-    Object.keys(variables).forEach((variable) => {
-      url = url.replace(`{${variable}}`, variables[variable].default);
-    });
-    return url;
+    const servers = openApi.servers;
+    return getAServerUrlWithExpandedVariables(servers);
   }
 
   if (openApi.servers) return openApi.servers[0].url;
@@ -803,6 +803,22 @@ const getHeadersArray = function (openApi, path, method) {
 
   return headers;
 };
+
+/**
+ * Given a non-empty array of Server objects, pick one, expand the variables in its
+ * url and return that url.
+ * @param {array} servers
+ * @returns
+ */
+function getAServerUrlWithExpandedVariables(servers) {
+  let firstServer = servers[0];
+  let url = firstServer.url;
+  const variables = firstServer.variables || {};
+  Object.keys(variables).forEach((variable) => {
+    url = url.replace(`{${variable}}`, variables[variable].default);
+  });
+  return url;
+}
 
 /**
  * Produces array of HAR files for given OpenAPI document
