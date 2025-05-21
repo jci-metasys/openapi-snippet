@@ -109,6 +109,19 @@
       "patch": {
         "description": "Updates tags on a specific pet",
         "operationId": "updatePetTags",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of pet to update",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 23739
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -146,6 +159,19 @@
       "patch": {
         "description": "Updates feeding schedule for specific pet",
         "operationId": "updatePetFeedingSchedule",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of pet to update",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "example": 23739
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {

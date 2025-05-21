@@ -136,7 +136,8 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int64"
+              "format": "int64",
+              "example": 23739
             }
           }
         ],
@@ -174,7 +175,8 @@
             "required": true,
             "schema": {
               "type": "integer",
-              "format": "int64"
+              "format": "int64",
+              "example": 23738
             }
           }
         ],
@@ -204,18 +206,23 @@
             "$ref": "#/components/schemas/NewPet"
           },
           {
-            "required": ["id"],
+            "required": [
+              "id"
+            ],
             "properties": {
               "id": {
                 "type": "integer",
-                "format": "int64"
+                "format": "int64",
+                "example": 2399
               }
             }
           }
         ]
       },
       "NewPet": {
-        "required": ["name"],
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -226,7 +233,10 @@
         }
       },
       "Error": {
-        "required": ["code", "message"],
+        "required": [
+          "code",
+          "message"
+        ],
         "properties": {
           "code": {
             "type": "integer",
