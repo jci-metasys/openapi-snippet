@@ -1,6 +1,8 @@
 {
   "swagger": "2.0",
-  "schemes": ["https"],
+  "schemes": [
+    "https"
+  ],
   "host": "www.googleapis.com",
   "basePath": "/blogger/v3",
   "info": {
@@ -45,7 +47,9 @@
     "alt": {
       "default": "json",
       "description": "Data format for the response.",
-      "enum": ["json"],
+      "enum": [
+        "json"
+      ],
       "in": "query",
       "name": "alt",
       "type": "string"
@@ -129,7 +133,11 @@
           },
           {
             "description": "Access level with which to view the blog. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -145,13 +153,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["blogs"]
+        "tags": [
+          "blogs"
+        ]
       },
       "parameters": [
         {
@@ -197,7 +211,11 @@
           },
           {
             "description": "Access level with which to view the blog. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -213,13 +231,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["blogs"]
+        "tags": [
+          "blogs"
+        ]
       },
       "parameters": [
         {
@@ -291,7 +315,12 @@
             "collectionFormat": "multi",
             "in": "query",
             "items": {
-              "enum": ["emptied", "live", "pending", "spam"],
+              "enum": [
+                "emptied",
+                "live",
+                "pending",
+                "spam"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -308,13 +337,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       },
       "parameters": [
         {
@@ -350,7 +385,8 @@
             "in": "path",
             "name": "blogId",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "firstBlog"
           },
           {
             "description": "Whether to retrieve the Page bodies.",
@@ -374,7 +410,10 @@
             "collectionFormat": "multi",
             "in": "query",
             "items": {
-              "enum": ["draft", "live"],
+              "enum": [
+                "draft",
+                "live"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -382,7 +421,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -398,13 +441,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       },
       "parameters": [
         {
@@ -438,7 +487,8 @@
             "in": "path",
             "name": "blogId",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "default": "firstBlog"
           },
           {
             "description": "Whether to create the page as a draft (default: false).",
@@ -464,10 +514,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       }
     },
     "/blogs/{blogId}/pages/{pageId}": {
@@ -497,10 +551,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       },
       "get": {
         "description": "Gets one blog page by ID.",
@@ -521,7 +579,11 @@
             "type": "string"
           },
           {
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -537,13 +599,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       },
       "parameters": [
         {
@@ -616,10 +684,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       },
       "put": {
         "description": "Update a page.",
@@ -669,10 +741,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       }
     },
     "/blogs/{blogId}/pages/{pageId}/publish": {
@@ -728,10 +804,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       }
     },
     "/blogs/{blogId}/pages/{pageId}/revert": {
@@ -787,10 +867,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pages"]
+        "tags": [
+          "pages"
+        ]
       }
     },
     "/blogs/{blogId}/pageviews": {
@@ -809,7 +893,11 @@
             "collectionFormat": "multi",
             "in": "query",
             "items": {
-              "enum": ["30DAYS", "7DAYS", "all"],
+              "enum": [
+                "30DAYS",
+                "7DAYS",
+                "all"
+              ],
               "type": "string"
             },
             "name": "range",
@@ -826,10 +914,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["pageViews"]
+        "tags": [
+          "pageViews"
+        ]
       },
       "parameters": [
         {
@@ -901,7 +993,10 @@
           {
             "default": "published",
             "description": "Sort search results",
-            "enum": ["published", "updated"],
+            "enum": [
+              "published",
+              "updated"
+            ],
             "in": "query",
             "name": "orderBy",
             "type": "string"
@@ -923,7 +1018,11 @@
             "description": "Statuses to include in the results.",
             "in": "query",
             "items": {
-              "enum": ["draft", "live", "scheduled"],
+              "enum": [
+                "draft",
+                "live",
+                "scheduled"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -931,7 +1030,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require escalated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -947,13 +1050,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "parameters": [
         {
@@ -1026,10 +1135,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       }
     },
     "/blogs/{blogId}/posts/bypath": {
@@ -1059,7 +1172,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -1075,13 +1192,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "parameters": [
         {
@@ -1136,7 +1259,10 @@
           {
             "default": "published",
             "description": "Sort search results",
-            "enum": ["published", "updated"],
+            "enum": [
+              "published",
+              "updated"
+            ],
             "in": "query",
             "name": "orderBy",
             "type": "string"
@@ -1152,13 +1278,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "parameters": [
         {
@@ -1211,10 +1343,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "get": {
         "description": "Get a post by ID.",
@@ -1255,7 +1391,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -1271,13 +1411,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "parameters": [
         {
@@ -1369,10 +1515,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       },
       "put": {
         "description": "Update a post.",
@@ -1441,10 +1591,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       }
     },
     "/blogs/{blogId}/posts/{postId}/comments": {
@@ -1500,7 +1654,12 @@
             "collectionFormat": "multi",
             "in": "query",
             "items": {
-              "enum": ["emptied", "live", "pending", "spam"],
+              "enum": [
+                "emptied",
+                "live",
+                "pending",
+                "spam"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -1508,7 +1667,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -1524,13 +1687,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       },
       "parameters": [
         {
@@ -1590,10 +1759,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       },
       "get": {
         "description": "Gets one comment by ID.",
@@ -1622,7 +1795,11 @@
           },
           {
             "description": "Access level for the requested comment (default: READER). Note that some comments will require elevated permissions, for example comments where the parent posts which is in a draft state, or comments that are pending moderation.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -1638,13 +1815,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       },
       "parameters": [
         {
@@ -1730,10 +1913,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       }
     },
     "/blogs/{blogId}/posts/{postId}/comments/{commentId}/removecontent": {
@@ -1796,10 +1983,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       }
     },
     "/blogs/{blogId}/posts/{postId}/comments/{commentId}/spam": {
@@ -1862,10 +2053,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["comments"]
+        "tags": [
+          "comments"
+        ]
       }
     },
     "/blogs/{blogId}/posts/{postId}/publish": {
@@ -1927,10 +2122,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       }
     },
     "/blogs/{blogId}/posts/{postId}/revert": {
@@ -1986,10 +2185,14 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           }
         ],
-        "tags": ["posts"]
+        "tags": [
+          "posts"
+        ]
       }
     },
     "/users/{userId}": {
@@ -2015,13 +2218,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["users"]
+        "tags": [
+          "users"
+        ]
       },
       "parameters": [
         {
@@ -2070,7 +2279,11 @@
             "description": "User access types for blogs to include in the results, e.g. AUTHOR will return blogs where the user has author level access. If no roles are specified, defaults to ADMIN and AUTHOR roles.",
             "in": "query",
             "items": {
-              "enum": ["ADMIN", "AUTHOR", "READER"],
+              "enum": [
+                "ADMIN",
+                "AUTHOR",
+                "READER"
+              ],
               "type": "string"
             },
             "name": "role",
@@ -2081,7 +2294,10 @@
             "description": "Blog statuses to include in the result (default: Live blogs only). Note that ADMIN access is required to view deleted blogs.",
             "in": "query",
             "items": {
-              "enum": ["DELETED", "LIVE"],
+              "enum": [
+                "DELETED",
+                "LIVE"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -2089,7 +2305,11 @@
           },
           {
             "description": "Access level with which to view the blogs. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -2105,13 +2325,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["blogs"]
+        "tags": [
+          "blogs"
+        ]
       },
       "parameters": [
         {
@@ -2173,13 +2399,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["blogUserInfos"]
+        "tags": [
+          "blogUserInfos"
+        ]
       },
       "parameters": [
         {
@@ -2252,7 +2484,10 @@
           {
             "default": "published",
             "description": "Sort order applied to search results. Default is published.",
-            "enum": ["published", "updated"],
+            "enum": [
+              "published",
+              "updated"
+            ],
             "in": "query",
             "name": "orderBy",
             "type": "string"
@@ -2273,7 +2508,11 @@
             "collectionFormat": "multi",
             "in": "query",
             "items": {
-              "enum": ["draft", "live", "scheduled"],
+              "enum": [
+                "draft",
+                "live",
+                "scheduled"
+              ],
               "type": "string"
             },
             "name": "status",
@@ -2281,7 +2520,11 @@
           },
           {
             "description": "Access level with which to view the returned result. Note that some fields require elevated access.",
-            "enum": ["ADMIN", "AUTHOR", "READER"],
+            "enum": [
+              "ADMIN",
+              "AUTHOR",
+              "READER"
+            ],
             "in": "query",
             "name": "view",
             "type": "string"
@@ -2297,13 +2540,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["postUserInfos"]
+        "tags": [
+          "postUserInfos"
+        ]
       },
       "parameters": [
         {
@@ -2372,13 +2621,19 @@
         },
         "security": [
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger"
+            ]
           },
           {
-            "Oauth2": ["https://www.googleapis.com/auth/blogger.readonly"]
+            "Oauth2": [
+              "https://www.googleapis.com/auth/blogger.readonly"
+            ]
           }
         ],
-        "tags": ["postUserInfos"]
+        "tags": [
+          "postUserInfos"
+        ]
       },
       "parameters": [
         {

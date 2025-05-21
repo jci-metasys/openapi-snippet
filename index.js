@@ -9,7 +9,7 @@
 'use strict';
 
 const OpenAPIToHar = require('./openapi-to-har.js');
-const HTTPSnippet = require('httpsnippet');
+const { HTTPSnippet, availableTargets } = require('httpsnippet');
 
 /**
  * Return snippets for endpoint identified using path and method in the given
@@ -147,7 +147,7 @@ const formatTarget = function (targetStr) {
   const title = capitalizeFirstLetter(language);
   let library = targetStr.split('_')[1];
 
-  const validTargets = HTTPSnippet.availableTargets();
+  const validTargets = availableTargets();
   let validLanguage = false;
   let validLibrary = false;
   for (let i in validTargets) {

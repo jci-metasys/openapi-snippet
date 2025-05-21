@@ -101,7 +101,8 @@
                     "in": "path",
                     "explode": false,
                     "schema": {
-                        "type": "integer"
+                        "type": "integer",
+                        "example": 1238
                     }
                 },
                 {
