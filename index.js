@@ -9,7 +9,7 @@
 'use strict';
 
 const OpenAPIToHar = require('./openapi-to-har.js');
-const { HTTPSnippet, availableTargets } = require('httpsnippet');
+const { HTTPSnippet, addTargetClient, availableTargets } = require('httpsnippet');
 
 /**
  * Return snippets for endpoint identified using path and method in the given
@@ -212,7 +212,6 @@ const capitalizeFirstLetter = function (string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const addTargetClient = HTTPSnippet.addTargetClient;
 
 module.exports = {
   getSnippets,
