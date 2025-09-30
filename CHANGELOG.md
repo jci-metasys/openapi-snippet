@@ -6,6 +6,11 @@ will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.14.0-jci6] - 2025-09-30
+
+This change updated to a forked version of httpsnippet from jci
+so that it and this repo could be run in node 24.
+
 ## [0.14.0-jci5] - 2025-05-21
 
 This change only updated the dependencies used by this package.
@@ -44,6 +49,7 @@ Changes since `0.14.0`:
 
 - Add support for server variables when generating base url for code snippets.
 
+[0.14.0-jci6]:https://github.com/jci-metasys/openapi-snippet/compare/v0.14.0-jci5...v0.14.0-jci6
 [0.14.0-jci5]:https://github.com/jci-metasys/openapi-snippet/compare/v0.14.0-jci3...v0.14.0-jci5
 [0.14.0-jci3]: https://github.com/jci-metasys/openapi-snippet/compare/v0.14.0-jci2...v0.14.0-jci3
 [0.14.0-jci2]: https://github.com/jci-metasys/openapi-snippet/compare/v0.14.0-jci1...v0.14.0-jci2
