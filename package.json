@@ -17,10 +17,11 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js | tap-spec",
-    "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js"
+    "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js",
+    "postinstall": "cd node_modules/httpsnippet && npm install && npm run build"
   },
   "dependencies": {
-    "httpsnippet": "^3.0.9",
+    "httpsnippet": "github:jci-metasys/httpsnippet#v3.0.9-jci1",
     "openapi-sampler": "^1.6.1"
   },
   "devDependencies": {
