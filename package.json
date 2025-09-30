@@ -20,7 +20,7 @@
     "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js"
   },
   "dependencies": {
-    "httpsnippet": "^3.0.9",
+    "httpsnippet": "git+https://github.com/jci-metasys/httpsnippet.git#v3.0.9-jci1",
     "openapi-sampler": "^1.6.1"
   },
   "devDependencies": {
