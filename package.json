@@ -21,7 +21,7 @@
     "postinstall": "cd node_modules/httpsnippet && npm install && npm run build"
   },
   "dependencies": {
-    "httpsnippet": "git+https://github.com/jci-metasys/httpsnippet.git#v3.0.9-jci1",
+    "httpsnippet": "github:jci-metasys/httpsnippet#v3.0.9-jci1",
     "openapi-sampler": "^1.6.1"
   },
   "devDependencies": {
