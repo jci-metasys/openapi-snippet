@@ -9,7 +9,7 @@
 'use strict';
 
 const OpenAPIToHar = require('./openapi-to-har.js');
-const { HTTPSnippet, addTargetClient, availableTargets } = require('httpsnippet');
+const { HTTPSnippet, addTargetClient, availableTargets } = require('@metasys/httpsnippet');
 
 /**
  * Return snippets for endpoint identified using path and method in the given
