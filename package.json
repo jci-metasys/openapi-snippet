@@ -1,6 +1,6 @@
 {
   "name": "openapi-snippet",
-  "version": "0.14.0-jci6",
+  "version": "0.14.0-jci7",
   "description": "Generates code snippets from Open API (previously Swagger) documents.",
   "repository": {
     "type": "git",
@@ -17,11 +17,10 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js | tap-spec",
-    "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js",
-    "postinstall": "cd node_modules/httpsnippet && npm install && npm run build"
+    "build": "mkdir -p dist && browserify -g uglifyify ./index.js > ./dist/openapisnippet.min.js"
   },
   "dependencies": {
-    "httpsnippet": "github:jci-metasys/httpsnippet#v3.0.9-jci1",
+    "@metasys/httpsnippet": "^3.0.9-jci1",
     "openapi-sampler": "^1.6.1"
   },
   "devDependencies": {
